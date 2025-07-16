@@ -1,3 +1,11 @@
+import { Form } from 'react-bootstrap'
 export default function Cell(props) {
-    return <p>{props.row}{props.col}</p>
+
+    // <p>{props.row}{props.col}</p>
+
+    return <>
+        <Form>
+            <Form.Control></Form.Control>
+        </Form>
+    </>
 }
