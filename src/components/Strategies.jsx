@@ -1,6 +1,6 @@
 import { Navbar, Card, Nav } from 'react-bootstrap';
 import { Container } from "react-bootstrap"
-export default function HowTo() {
+export default function Strategies() {
     return <>
         <Navbar bg="light" data-bs-theme="light" fixed="top">
             <Container>
@@ -11,6 +11,6 @@ export default function HowTo() {
                 <Nav.Link href="#strategies">Strategies</Nav.Link>
             </Container>
         </Navbar>
-        <h1>How to play sudoku</h1>
+        <h1>Strategies</h1>
     </>
 }

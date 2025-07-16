@@ -1,5 +1,5 @@
 import { Container, Row, Col, Button } from "react-bootstrap"
-import { Navbar, Card } from 'react-bootstrap';
+import { Navbar, Card, Nav } from 'react-bootstrap';
 import Cell from './Cell'
 import { useState } from 'react'
 
@@ -13,8 +13,21 @@ export default function Game() {
     // The Cell in the top left has index 00 and the Cell in the bottom right has index 88.
     // For readability the three outside rows are created by copy and pasting instead of mapping. 
     return <>
+        <Navbar bg="light" data-bs-theme="light" fixed="top">
+            <Container>
+                <Navbar.Brand>Sudoku</Navbar.Brand>
+                
+                <Nav.Link href="~">Play Sudoku</Nav.Link>
+                <Nav.Link href="#how-to">How to play</Nav.Link>
+                <Nav.Link href="#strategies">Strategies</Nav.Link>
+                
+                
+            </Container>
+        </Navbar>
+        <div></div>
+        <h1>Sudoku Game</h1>
         <Container>  
-            <Card>
+            
                 <Row>
                     {
                         nums.map((square) => <Col key={square}> 
@@ -60,7 +73,7 @@ export default function Game() {
                                 </Col>)
                     }
                 </Row>
-            </Card>
+            
         </Container>
         <Container>
             <Row>
