@@ -16,7 +16,7 @@ function App() {
     
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Game/>}></Route>
+        <Route path="/play-sudoku" element={<Game/>}></Route>
         <Route path="/how-to" element={<HowTo/>}></Route>
         <Route path="/strategies" element={<Strategies/>}></Route>
       </Routes>
