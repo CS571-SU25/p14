@@ -6,7 +6,30 @@ import { useState } from 'react'
 export default function Game() {
 
     const nums = [0, 1, 2];
-    
+    const [savedValues, setSavedValues] = useState(sessionStorage.getItem("savedValues"));
+
+    function saveValues() {
+        let temp = [];
+
+        // if gridValues exist, save the grid values
+        if (sessionStorage.getItem("gridValues") && sessionStorage.getItem("gridValues") !== "0") {
+            
+            for (let cell of JSON.parse(sessionStorage.getItem("gridValues"))) {
+                // For each cell in the grid, put a boolean in the savedValues to say if it's saved
+                temp.push(cell !== "0");
+                //alert(cell);
+            }
+
+            sessionStorage.setItem("savedValues", JSON.stringify(temp));
+            setSavedValues(temp);
+        } else {
+            alert("Can't save 0 values");
+        }
+
+
+        // console.log("SavedValues: " + savedValues);
+        // console.log("SavedValues: " + sessionStorage.getItem("savedValues"));
+    }
 
 
     // create a 3x3 grid of Cards with the Cards containing a 3x3 grid of Cells
@@ -80,10 +103,14 @@ export default function Game() {
             <Row>
                 <Col>
                     <Button onClick={() => {
-                                sessionStorage.setItem("gridValues", 0)
+                                sessionStorage.setItem("gridValues", 0);
+                                sessionStorage.setItem("savedValues", null);
+                                setSavedValues(null);
                             }
                         }> New Game </Button>
-                    <Button > Set values </Button>
+                    {
+                        savedValues === "null" ? <Button onClick={saveValues}> Set values </Button> : <></>
+                    }
                 </Col>
             </Row>
         </Container>
