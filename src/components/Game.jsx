@@ -109,7 +109,7 @@ export default function Game() {
                             }
                         }> New Game </Button>
                     {
-                        savedValues === "null" ? <Button onClick={saveValues}> Set values </Button> : <></>
+                        savedValues === "null" || savedValues === null ? <Button onClick={saveValues}> Set values </Button> : <></>
                     }
                 </Col>
             </Row>
