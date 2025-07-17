@@ -6,7 +6,7 @@ import { useState } from 'react'
 export default function Game() {
 
     const nums = [0, 1, 2];
-
+    
 
 
     // create a 3x3 grid of Cards with the Cards containing a 3x3 grid of Cells
@@ -24,8 +24,9 @@ export default function Game() {
                 
             </Container>
         </Navbar>
-        <div></div>
+        <p></p>
         <h1>Sudoku Game</h1>
+        <p>To delete a number replace it with 0 and reload</p>
         <Container>  
             
                 <Row>

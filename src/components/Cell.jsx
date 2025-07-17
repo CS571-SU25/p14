@@ -4,19 +4,36 @@ export default function Cell(props) {
 
     const [value, setValue] = useState(sessionStorage.getItem("gridValues") ? JSON.parse(sessionStorage.getItem("gridValues"))[(props.row * 9) + props.col] : "");
 
+
     // <p>{props.row}{props.col}</p>
     function changeGrid(val) {
         let grid = [];
         
+        // if it's not a number from 1 to 9 (or 0 for delete) then don't save the value 
+        for (let i = 0; i < 11; i++) {
+            console.log(i);
+
+            // if the value is 1-9 (or 0) then leave the loop and save the value
+            if (("" + i) === val) {
+                console.log("yee");
+                break;
+            }
+            
+            // if the value isn't 1-9 then don't save the value and instead return early
+            if (i === 10) {
+                return;
+            }
+        }
+
         if (sessionStorage.getItem("gridValues") && sessionStorage.getItem("gridValues") !== "0") {
             const oldGrid = JSON.parse(sessionStorage.getItem("gridValues"));
             for (let cell of oldGrid) {
-                grid.push(cell);
+                grid.push("" + cell);
             }
         } else {
 
             for (let i = 0; i < 81; i++) {
-                grid.push(0);
+                grid.push("0");
             }
 
         }
@@ -24,13 +41,14 @@ export default function Cell(props) {
 
         sessionStorage.setItem("gridValues", JSON.stringify(grid));
         // console.log("val: " + val + " grid " + grid);
+        // setValue(parseInt(val));
         setValue(val);
-        
+        console.log("value: " + val + " type: " + typeof val + " === 0: " + (val === "0"));
     }
 
     return <>
         <Form>
-            <Form.Control onChange={(input) => changeGrid(input.target.value)} placeholder={sessionStorage.getItem("gridValues") ? (value === 0 ? "": value) : ""} ></Form.Control>
+            <Form.Control onChange={(input) => changeGrid(input.target.value)} placeholder={sessionStorage.getItem("gridValues") ? (value === "0" ? "": value) : ""} ></Form.Control>
         </Form>
     </>
 }
