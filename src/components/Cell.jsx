@@ -50,7 +50,7 @@ export default function Cell(props) {
             {
                 sessionStorage.getItem("savedValues") !== "null" &&sessionStorage.getItem("savedValues") !== null && JSON.parse(sessionStorage.getItem("savedValues"))[(props.row * 9) + props.col] ? 
                     <strong>{value}</strong> : 
-                    <Form.Control onChange={(input) => changeGrid(input.target.value)} placeholder={sessionStorage.getItem("gridValues") ? (value === "0" ? "": value) : ""} ></Form.Control>
+                    <Form.Control onChange={(input) => changeGrid(input.target.value)} placeholder={sessionStorage.getItem("gridValues") ? (value === "0" ? "": value) : ""} id={"" + props.row + props.col}></Form.Control>
             }
         </Form>
     </>

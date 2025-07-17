@@ -1,16 +1,17 @@
-import { Navbar, Card, Nav } from 'react-bootstrap';
-import { Container } from "react-bootstrap"
+import { Pagination } from 'react-bootstrap';
+import { useState } from 'react'
+import SudokuNavBar from "./SudokuNavBar"
+
 export default function Strategies() {
+    const [page, setPage] = useState("Begginer");
+
     return <>
-        <Navbar bg="light" data-bs-theme="light" fixed="top">
-            <Container>
-                <Navbar.Brand>Sudoku</Navbar.Brand>
-                
-                <Nav.Link href="#play-sudoku">Play Sudoku</Nav.Link>
-                <Nav.Link href="#how-to">How to play</Nav.Link>
-                <Nav.Link href="#strategies">Strategies</Nav.Link>
-            </Container>
-        </Navbar>
+        <SudokuNavBar></SudokuNavBar>
         <h1>Strategies</h1>
+        <Pagination>
+            <Pagination.Item onClick={() => setPage("Begginer")} active={page === "Begginer"}>Begginer</Pagination.Item>
+            <Pagination.Item onClick={() => setPage("Intermediate")} active={page === "Intermediate"}>Intermediate</Pagination.Item>
+            <Pagination.Item onClick={() => setPage("Advanced")} active={page === "Advanced"}>Advanced</Pagination.Item>
+        </Pagination>
     </>
 }

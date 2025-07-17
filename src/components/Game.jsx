@@ -1,7 +1,8 @@
 import { Container, Row, Col, Button } from "react-bootstrap"
-import { Navbar, Card, Nav } from 'react-bootstrap';
-import Board from './Board'
 import { useState } from 'react'
+
+import Board from './Board'
+import SudokuNavBar from "./SudokuNavBar"
 
 export default function Game() {
 
@@ -34,17 +35,7 @@ export default function Game() {
 
     
     return <>
-        <Navbar bg="light" data-bs-theme="light" fixed="top">
-            <Container>
-                <Navbar.Brand>Sudoku</Navbar.Brand>
-                
-                <Nav.Link href="#play-sudoku">Play Sudoku</Nav.Link>
-                <Nav.Link href="#how-to">How to play</Nav.Link>
-                <Nav.Link href="#strategies">Strategies</Nav.Link>
-                
-                
-            </Container>
-        </Navbar>
+        <SudokuNavBar></SudokuNavBar>
         <p></p>
         <h1>Sudoku Game</h1>
         <p>To delete a number replace it with 0 and reload</p>
