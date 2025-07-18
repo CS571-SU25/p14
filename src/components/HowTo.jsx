@@ -1,5 +1,4 @@
-import { Navbar, Card, Nav } from 'react-bootstrap';
-import { Container } from "react-bootstrap"
+
 import sudokuRowCol from "../images/sudokuRowCol.jpg";
 import sudokuSquare from "../images/sudokuSquare.jpg";
 import SudokuNavBar from "./SudokuNavBar"

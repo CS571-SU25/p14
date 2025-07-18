@@ -1,5 +1,4 @@
-import { Container, Row, Col, Button } from "react-bootstrap"
-import { Navbar, Card, Nav } from 'react-bootstrap';
+import { Container, Row, Col, Card } from "react-bootstrap"
 import Cell from './Cell'
 
 export default function Board() {
@@ -14,46 +13,46 @@ export default function Board() {
             {
                 nums.map((square) => <Col key={square}> 
                     <Card>
-                                                <Container>
-                                                    {
-                                                        nums.map((row) => <Row key={row}> {
-                                                            nums.map((col) => <Col key={col}><Cell row={row} col={col + (square * 3)}></Cell></Col>)
-                                                        }</Row>)
-                                                    }
-                                                </Container>
-                                            </Card>
-                                        </Col>)
-                            }
-                        </Row>
-        <Row>
+                        <Container>
                             {
-                                nums.map((square) => <Col key={square}> 
-                                            <Card>
-                                                <Container>
-                                                    {
-                                                        nums.map((row) => <Row key={row}> {
-                                                            nums.map((col) => <Col key={col}><Cell row={row + 3} col={col + (square * 3)}></Cell></Col>)
-                                                        }</Row>)
-                                                    }
-                                                </Container>
-                                            </Card>
-                                        </Col>)
+                                nums.map((row) => <Row key={row}> {
+                                        nums.map((col) => <Col key={col}><Cell row={row} col={col + (square * 3)}></Cell></Col>)
+                                    }</Row>)
                             }
-                        </Row>
+                        </Container>
+                    </Card>
+                </Col>)
+            }
+        </Row>
         <Row>
-                    {
-                        nums.map((square) => <Col key={square}> 
-                                    <Card>
-                                        <Container>
-                                            {
-                                                nums.map((row) => <Row key={row}> {
-                                                    nums.map((col) => <Col key={col}><Cell row={row + 6} col={col + (square * 3)}></Cell></Col>)
-                                                }</Row>)
-                                            }
-                                        </Container>
-                                    </Card>
-                                </Col>)
-                    }
-                </Row>
+            {
+                nums.map((square) => <Col key={square}> 
+                    <Card>
+                        <Container>
+                            {
+                                nums.map((row) => <Row key={row}> {
+                                    nums.map((col) => <Col key={col}><Cell row={row + 3} col={col + (square * 3)}></Cell></Col>)
+                                }</Row>)
+                            }
+                        </Container>
+                    </Card>
+                </Col>)
+            }
+        </Row>
+        <Row>
+            {
+                nums.map((square) => <Col key={square}> 
+                    <Card>
+                        <Container>
+                            {
+                                nums.map((row) => <Row key={row}> {
+                                    nums.map((col) => <Col key={col}><Cell row={row + 6} col={col + (square * 3)}></Cell></Col>)
+                                }</Row>)
+                            }
+                        </Container>
+                    </Card>
+                </Col>)
+            }
+        </Row>
     </Container>
 }

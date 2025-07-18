@@ -6,7 +6,7 @@ import { HashRouter, Route, Routes } from 'react-router'
 
 
 import HowTo from './components/HowTo'
-import Game from './components/Game'
+import PlaySudoku from './components/PlaySudoku'
 import Strategies from './components/Strategies'
 import LandingScreen from './components/LandingScreen'
 
@@ -18,7 +18,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="" element={<LandingScreen/>}></Route>
-        <Route path="/play-sudoku" element={<Game/>}></Route>
+        <Route path="/play-sudoku" element={<PlaySudoku/>}></Route>
         <Route path="/how-to" element={<HowTo/>}></Route>
         <Route path="/strategies" element={<Strategies/>}></Route>
       </Routes>

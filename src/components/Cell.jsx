@@ -5,7 +5,7 @@ export default function Cell(props) {
     const [value, setValue] = useState(sessionStorage.getItem("gridValues") ? JSON.parse(sessionStorage.getItem("gridValues"))[(props.row * 9) + props.col] : "");
 
 
-    // <p>{props.row}{props.col}</p>
+    
     function changeGrid(val) {
         let grid = [];
         
@@ -43,8 +43,6 @@ export default function Cell(props) {
         setValue(val);
     }
 
-    // {sessionStorage.getItem("savedValues") !== "null"  && JSON.parse(sessionStorage.getItem("savedValues")) ? <p>saved</p> : <Form.Control onChange={(input) => changeGrid(input.target.value)} placeholder={sessionStorage.getItem("gridValues") ? (value === "0" ? "": value) : ""} ></Form.Control>}
-//{/* <Form.Control onChange={(input) => changeGrid(input.target.value)} placeholder={sessionStorage.getItem("gridValues") ? (value === "0" ? "": value) : ""} ></Form.Control> */}
     return <>
         <Form>
             {

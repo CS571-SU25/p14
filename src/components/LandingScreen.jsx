@@ -1,4 +1,4 @@
-import { Navbar, Card, Nav } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 export default function LandingScreen() {
     return <div>
         <h1> Sudoku Links</h1>
