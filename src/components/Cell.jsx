@@ -10,18 +10,24 @@ export default function Cell(props) {
         let grid = [];
         
         // if it's not a number from 1 to 9 (or 0 for delete) then don't save the value 
-        for (let i = 0; i < 11; i++) {
-
-            // if the value is 1-9 (or 0) then leave the loop and save the value
-            if (("" + i) === val) {
-                break;
-            }
-            
-            // if the value isn't 1-9 then don't save the value and instead return early
-            if (i === 10) {
+        const num = Number.parseInt(val);
+        if (num) {
+            if (num < 0 ) {
                 return;
             }
+            if (num > 9) {
+                // if the value is greater than 9 clear the square because otherwise it saves the tens digit
+                val = "0";
+            }
+        } else {
+            //don't include non-integers
+            return;
         }
+        if (val.includes(".")) {
+            //don't include anything after a period (values must be integers)
+            return;
+        }
+        
 
         if (sessionStorage.getItem("gridValues") && sessionStorage.getItem("gridValues") !== "0") {
             const oldGrid = JSON.parse(sessionStorage.getItem("gridValues"));
