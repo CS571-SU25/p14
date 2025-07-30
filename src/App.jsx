@@ -6,8 +6,8 @@ import { HashRouter, Route, Routes } from 'react-router'
 
 
 import HowTo from './components/HowTo'
-import PlaySudoku from './components/PlaySudoku'
-import Strategies from './components/Strategies'
+import PlaySudoku from './components/sudokuGame/PlaySudoku'
+import Strategies from './components/stratComponents/Strategies'
 import LandingScreen from './components/LandingScreen'
 
 function App() {
