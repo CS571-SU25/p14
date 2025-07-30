@@ -36,9 +36,8 @@ export default function Game() {
     
     return <>
         <SudokuNavBar></SudokuNavBar>
-        <p></p>
-        <h1>Sudoku Game</h1>
-        <p>To delete a number replace it with 0 and reload</p>
+        
+        <h1 style={{marginTop: 25}}>Sudoku Game</h1>
         <Board></Board>
         <Container>
             <Row>
