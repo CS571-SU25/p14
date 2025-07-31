@@ -9,6 +9,7 @@ import HowTo from './components/HowTo'
 import PlaySudoku from './components/gameComponents/PlaySudoku'
 import Strategies from './components/stratComponents/Strategies'
 import LandingScreen from './components/LandingScreen'
+import OtherGames from './components/OtherGames'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
         <Route path="/play-sudoku" element={<PlaySudoku/>}></Route>
         <Route path="/how-to" element={<HowTo/>}></Route>
         <Route path="/strategies" element={<Strategies/>}></Route>
+        <Route path="/other-games" element={<OtherGames/>}/>
       </Routes>
       
     </HashRouter>

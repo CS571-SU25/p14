@@ -7,6 +7,7 @@ export default function SudokuNavBar() {
                 <Nav.Link href="#play-sudoku">Play Sudoku</Nav.Link>
                 <Nav.Link href="#how-to">How to play</Nav.Link>
                 <Nav.Link href="#strategies">Strategies</Nav.Link>
+                <Nav.Link href="#other-games">Other Games</Nav.Link>
             </Container>
         </Navbar>
 }
