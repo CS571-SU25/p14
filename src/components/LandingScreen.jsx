@@ -15,6 +15,9 @@ export default function LandingScreen() {
             <Nav.Item>
                 <Nav.Link href="#other-games">Other games</Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="#preferences">Preferences</Nav.Link>
+            </Nav.Item>
         </Nav>
     </div>
 }
