@@ -1,4 +1,3 @@
-import sudokuRowCol from "../../images/sudokuRowCol.jpg";
 import lastCellInBox from "../../images/lastCellInBox.jpg";
 import lastOptionInCell from "../../images/lastOptionInCell.jpg";
 import { Container, Col, Row } from "react-bootstrap";
@@ -12,7 +11,7 @@ export default function Beginner() {
         <Container>
             <Row>
                 <Col>
-                    <img src={lastCellInBox} width={300} alt="Image of a 3x3 box of cells  sudoku board. Each cell except for top left cell are filled in with a number 1-8. The top left cell has the number 9 written in as a note, but not filled in as a value for the cell."></img>
+                    <img src={lastCellInBox} width={300} alt="Image of a 3x3 box of cells. Each cell except for top left cell are filled in with a number 1-8. The top left cell has the number 9 written in as a note, but not filled in as a value for the cell."></img>
             
                 </Col>
                 <Col>
