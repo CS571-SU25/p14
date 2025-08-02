@@ -19,7 +19,9 @@ export default function Cell(props) {
                 // if the value is greater than 9 clear the square because otherwise it saves the tens digit
                 val = "0";
             }
-        } else {
+        } else if (val === "") {
+            //if the value is "" save it beacuse it means you're deleting a number
+        }else {
             //don't include non-integers
             return;
         }
