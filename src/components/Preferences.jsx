@@ -28,7 +28,7 @@ export default function Preferences(props) {
                 {/* <button onClick={() => setMode((prev) => mode === "lightmode" ? "darkmode" : "lightmode")}>{mode === "lightmode" ? "Turn on darkmode" : "Turn on light mode"}</button> */}
             </Container>
 
-            <p style={pStyle}>NavBar Color</p>
+            <p style={pStyle}>Navigation Bar Color</p>
             <Container>
                 <Row>
                     <Col>
@@ -76,7 +76,7 @@ export default function Preferences(props) {
                 </Row>
             </Container>
 
-            <p style={pStyle}> NavBar placement </p>
+            <p style={pStyle}> Navigation Bar placement </p>
             <Container>
                 <Row>
                     <Col>
