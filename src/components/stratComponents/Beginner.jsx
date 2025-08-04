@@ -2,13 +2,19 @@ import lastCellInBox from "../../images/lastCellInBox.jpg";
 import lastOptionInCell from "../../images/lastOptionInCell.jpg";
 import { Container, Col, Row } from "react-bootstrap";
 
-export default function Beginner() {
+export default function Beginner(props) {
+    const hStyle = {
+        color: props.preferences.hColor
+    }
+    const pStyle = {
+        color: props.preferences.pColor
+    }
 
     return <>
-        <h2>Beginning strategies</h2>
+        <h2 style={hStyle}>Beginning strategies</h2>
         
-        <h3>Last Cell In Box, Row, or Column</h3>
-        <Container>
+        <h3 style={hStyle}>Last Cell In Box, Row, or Column</h3>
+        <Container style={pStyle}>
             <Row>
                 <Col>
                     <img src={lastCellInBox} width={300} alt="Image of a 3x3 box of cells. Each cell except for top left cell are filled in with a number 1-8. The top left cell has the number 9 written in as a note, but not filled in as a value for the cell."></img>
@@ -27,8 +33,8 @@ export default function Beginner() {
             
         </Container>
 
-        <h3>Last Option In Cell</h3>
-        <Container>
+        <h3 style={hStyle}>Last Option In Cell</h3>
+        <Container style={pStyle}>
             <Row>
                 <Col>
                     <img src={lastOptionInCell} width={300} alt="Image of an incomplete sudoku board. One cell on the board has a note marking the number 9. The column of that cell has cells with the numbers 1, 7, and 5 filled out. The row of that cell has the numbers 2, 4, and 8 filled out. The box of that cell has the numbers 3 and 6 filled out."></img>

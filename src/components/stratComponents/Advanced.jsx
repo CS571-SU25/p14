@@ -1,14 +1,20 @@
 import { Container, Row, Col } from "react-bootstrap"
 import xWing from "../../images/xWing.jpg";
 
-export default function Advanced() {
+export default function Advanced(props) {
+    const hStyle = {
+        color: props.preferences.hColor
+    }
+    const pStyle = {
+        color: props.preferences.pColor
+    }
 
     return <>
-        <h2>Advanced strategies</h2>
+        <h2 style={hStyle}>Advanced strategies</h2>
         
 
-        <h3> X wing</h3>
-        <Container>
+        <h3 style={hStyle}> X wing</h3>
+        <Container style={pStyle}>
             <Row>
                 <Col>
                     <p>

@@ -5,14 +5,26 @@ import sudokuSquare from "../images/sudokuSquare.jpg";
 import SudokuNavBar from "./SudokuNavBar"
 
 export default function HowTo() {
+    const preferences = sessionStorage.getItem("preferences") ? JSON.parse(sessionStorage.getItem("preferences")) : {
+        pColor: "black",
+        hColor: "black"
+    };
+
+    const hStyle = {
+        color: preferences.hColor
+    }
+    const pStyle = {
+        color: preferences.pColor
+    }
+        
     return <>
         <SudokuNavBar></SudokuNavBar>
-        <h1 style={{marginTop: 25}}>How to play sudoku</h1>
-        <h2>Rules for cells</h2>
-        <p>Each cell must contain a number between 1 and 9</p>
+        <h1 style={{marginTop: 25, color: preferences.hColor}}>How to play sudoku</h1>
+        <h2 style={hStyle}>Rules for cells</h2>
+        <p style={pStyle}>Each cell must contain a number between 1 and 9</p>
 
-        <h2>Rules for columns and rows</h2>
-        <Container>
+        <h2 style={hStyle}>Rules for columns and rows</h2>
+        <Container style={pStyle}>
             <Row>
                 <Col>
                     <img src={sudokuRowCol} width={300} alt="Image of an incomplete sudoku board. One row has two cells with 1s which are drawn in red with an x. Similarly, one column has two cells with 6s in it and the cells with sixes are red and theres an x marking them."></img>
@@ -26,8 +38,8 @@ export default function HowTo() {
         </Container>
         
 
-        <h2>Rules for squares</h2>
-        <Container>
+        <h2 style={hStyle}>Rules for squares</h2>
+        <Container style={pStyle}>
             <Row>
                 <Col>
                     <img src={sudokuSquare} width={300} alt="Image of 3 by 3 sudoku square with two cells with the number three written in red with an x."></img>

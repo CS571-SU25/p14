@@ -5,6 +5,10 @@ import Board from './Board'
 import SudokuNavBar from "../SudokuNavBar"
 
 export default function Game() {
+    const preferences = sessionStorage.getItem("preferences") ? JSON.parse(sessionStorage.getItem("preferences")) : {
+        pColor: "black",
+        hColor: "black"
+    };
 
     
     const [savedValues, setSavedValues] = useState(sessionStorage.getItem("savedValues"));
@@ -37,7 +41,7 @@ export default function Game() {
     return <>
         <SudokuNavBar></SudokuNavBar>
         
-        <h1 style={{marginTop: 25}}>Sudoku Game</h1>
+        <h1 style={{marginTop: 25, color: preferences.hColor}}>Sudoku Game</h1>
         <Board></Board>
         <Container>
             <Row>

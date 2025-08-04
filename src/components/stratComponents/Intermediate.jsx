@@ -2,13 +2,19 @@ import hiddenPairs from "../../images/hiddenPairs.jpg"
 import nakedPairs from "../../images/nakedPairs.jpg"
 import { Container, Col, Row } from "react-bootstrap"
 
-export default function Intermediate() {
+export default function Intermediate(props) {
+    const hStyle = {
+        color: props.preferences.hColor
+    }
+    const pStyle = {
+        color: props.preferences.pColor
+    }
 
     return <>
-        <h2>Intermediate strategies</h2>
+        <h2 style={hStyle}>Intermediate strategies</h2>
         
-        <h3>Hidden Pairs (or triplets or quads)</h3>
-        <Container>
+        <h3 style={hStyle}>Hidden Pairs (or triplets or quads)</h3>
+        <Container style={pStyle}>
             <Row>
                 <Col>
                     <img src={hiddenPairs} width={300} alt="Image of a 3x3 box of cells. The cells in the bottom row and the middle right cell are filled out with numbers 4, 7, 8, and 9. The remaining cells have notes on what numbers they can be. While there doesn't seem to be a pattern about the numbers 1-3, the numbers 5 and 6 only reside in the two empty cells in the middle column."></img>
@@ -29,8 +35,8 @@ export default function Intermediate() {
             
         </Container>
 
-        <h3>Naked pairs (or triplets or quads)</h3>
-        <Container>
+        <h3 style={hStyle}>Naked pairs (or triplets or quads)</h3>
+        <Container style={pStyle}>
             <Row>
                 <Col>
                     <img src={nakedPairs} width={300} alt="Image of a 3x3 box of cells. The cells in the bottom row and the middle right cell are filled out with numbers 4, 7, 8, and 9. The remaining cells have notes on what numbers they can be. The remaining cells in the left and right columns have notes of some of the numbers 1, 2, 3, 5, or 6 with little to no pattern, however the empty cells in the middle row only have the numbers 5 and 6 in them."></img>
