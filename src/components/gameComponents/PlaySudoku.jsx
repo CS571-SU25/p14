@@ -21,7 +21,7 @@ export default function Game() {
             
             for (let cell of JSON.parse(sessionStorage.getItem("gridValues"))) {
                 // For each cell in the grid, put a boolean in the savedValues to say if it's saved
-                temp.push(cell !== "0");
+                temp.push(cell !== "");
                 //alert(cell);
             }
 
@@ -42,7 +42,7 @@ export default function Game() {
         <SudokuNavBar></SudokuNavBar>
         
         <h1 style={{marginTop: 25, color: preferences.hColor}}>Sudoku Game</h1>
-        <Board></Board>
+        <Board />
         <Container>
             <Row>
                 <Col>
