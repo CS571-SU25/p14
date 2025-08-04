@@ -35,7 +35,7 @@ export default function LandingScreen() {
             The <strong>Other Games</strong> page suggests some other logic puzzles that the user might enjoy if they like sudoku.
         </p>
         <p>
-            The <strong>Preferences</strong> page allows the user to change the color of the text on the screen, the color of the navigation bar and the placement of the navigation bar.
+            The <strong>Preferences</strong> page allows the user to change the color of the text on the screen, whether input labels are being used for the sudoku board (the default is using input labels), the color of the navigation bar and the placement of the navigation bar.
         </p>
     </div>
 }

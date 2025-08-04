@@ -6,7 +6,9 @@ export default function Cell(props) {
     const [value, setValue] = useState(sessionStorage.getItem("gridValues") ? JSON.parse(sessionStorage.getItem("gridValues"))[(props.row * 9) + props.col] : "");
 
     const isDisabled = sessionStorage.getItem("savedValues") !== "null" && sessionStorage.getItem("savedValues") !== null && JSON.parse(sessionStorage.getItem("savedValues"))[(props.row * 9) + props.col];
-
+    const preferences = sessionStorage.getItem("preferences") ? JSON.parse(sessionStorage.getItem("preferences")) : {
+        useLabels: "true"
+    };
     
     function changeGrid(val) {
         let grid = [];
@@ -56,11 +58,13 @@ export default function Cell(props) {
 
     return <>
         <Form>
+            {
+                preferences.useLabels === "true" ? <Form.Label htmlFor={"" + props.row + props.col}>Cell {props.row} {props.col} </Form.Label> : <></>
+            }
             <Form.Control disabled={isDisabled} 
                 onChange={(input) => changeGrid(input.target.value)} 
                 value={sessionStorage.getItem("gridValues") ? value : ""} 
                 id={"" + props.row + props.col}/>
-    
         </Form>
     </>
 }

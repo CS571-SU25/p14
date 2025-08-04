@@ -51,9 +51,9 @@ export default function Game() {
                                 sessionStorage.setItem("savedValues", null);
                                 setSavedValues(null);
                             }
-                        }> New Game </Button>
+                        } id="New Game Button"> New Game </Button>
                     {
-                        savedValues === "null" || savedValues === null ? <Button onClick={saveValues}> Set values </Button> : <></>
+                        savedValues === "null" || savedValues === null ? <Button onClick={saveValues} id="Set Values Button"> Set values </Button> : <></>
                     }
                 </Col>
             </Row>

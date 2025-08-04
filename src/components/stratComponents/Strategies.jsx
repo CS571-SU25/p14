@@ -17,9 +17,9 @@ export default function Strategies() {
         <SudokuNavBar></SudokuNavBar>
         <h1 style={{marginTop: 25, color: preferences.hColor}}>Strategies</h1>
         <Pagination style={{justifyContent: "center"}}>
-            <Pagination.Item onClick={() => setPage("Beginner")} active={page === "Beginner"}>Begginer</Pagination.Item>
-            <Pagination.Item onClick={() => setPage("Intermediate")} active={page === "Intermediate"}>Intermediate</Pagination.Item>
-            <Pagination.Item onClick={() => setPage("Advanced")} active={page === "Advanced"}>Advanced</Pagination.Item>
+            <Pagination.Item onClick={() => setPage("Beginner")} active={page === "Beginner"} id="Beginner page">Begginer</Pagination.Item>
+            <Pagination.Item onClick={() => setPage("Intermediate")} active={page === "Intermediate"} id="Intermediate page">Intermediate</Pagination.Item>
+            <Pagination.Item onClick={() => setPage("Advanced")} active={page === "Advanced"} id="Advanced page">Advanced</Pagination.Item>
         </Pagination>
         {
             page === "Beginner" ? <Beginner preferences={preferences}></Beginner> : <></>

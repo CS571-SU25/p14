@@ -8,7 +8,7 @@ export default function Board() {
     // create a 3x3 grid of Cards with the Cards containing a 3x3 grid of Cells
     // The Cell in the top left has index 00 and the Cell in the bottom right has index 88.
     // For readability the three outside rows are created by copy and pasting instead of mapping. 
-    return <Table   >
+    return <Table>
         <tbody>
         <tr>
             {

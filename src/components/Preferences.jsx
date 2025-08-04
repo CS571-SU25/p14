@@ -10,7 +10,8 @@ export default function Preferences(props) {
         hColor: "black",
         navBG: "light",
         navTheme: "light",
-        navPlacement: "top"
+        navPlacement: "top",
+        useLabels: "true"
     });
 
     const hStyle = {
@@ -25,7 +26,6 @@ export default function Preferences(props) {
             <SudokuNavBar/>
             <Container style={hStyle}>
                 <h1 style={{marginTop: 25}}>Preferences</h1>
-                {/* <button onClick={() => setMode((prev) => mode === "lightmode" ? "darkmode" : "lightmode")}>{mode === "lightmode" ? "Turn on darkmode" : "Turn on light mode"}</button> */}
             </Container>
 
             <p style={pStyle}>Navigation Bar Color</p>
@@ -41,7 +41,8 @@ export default function Preferences(props) {
                             temp.navTheme = "dark";
                             sessionStorage.setItem("preferences", JSON.stringify(temp));
                             return temp;
-                        })} style={{color: "white", backgroundColor: "black"}}>
+                        })} style={{color: "white", backgroundColor: "black"}}
+                        id="Dark mode navigation bar">
                             Dark
                         </Button>
                     </Col>
@@ -55,7 +56,7 @@ export default function Preferences(props) {
                             temp.navTheme = "dark";
                             sessionStorage.setItem("preferences", JSON.stringify(temp));
                             return temp;
-                        })}>
+                        })} id="Blue mode navigation bar">
                             Blue
                         </Button>
                     </Col>
@@ -69,7 +70,7 @@ export default function Preferences(props) {
                             temp.navTheme = "light";
                             sessionStorage.setItem("preferences", JSON.stringify(temp));
                             return temp;
-                        })} style={{color: "black", backgroundColor: "white"}}>
+                        })} style={{color: "black", backgroundColor: "white"}} id="Light mode navigation bar">
                             Light
                         </Button>
                     </Col>
@@ -88,9 +89,9 @@ export default function Preferences(props) {
                             temp.navPlacement = "top";
                             sessionStorage.setItem("preferences", JSON.stringify(temp));
                             return temp;
-                        })}>
+                        })} id="Top navigation bar">
                             Top
-                        </Button>
+                        </Button >
                     </Col>
                     <Col>
                         <Button onClick={() => setPreferences((prev) => {
@@ -101,7 +102,7 @@ export default function Preferences(props) {
                             temp.navPlacement = "bottom";
                             sessionStorage.setItem("preferences", JSON.stringify(temp));
                             return temp;
-                        })}>
+                        })} id="bottom navigation bar">
                             Bottom
                         </Button>
                     </Col>
@@ -121,7 +122,7 @@ export default function Preferences(props) {
                             temp.hColor = "#820b02ff";
                             sessionStorage.setItem("preferences", JSON.stringify(temp));
                             return temp;
-                        })} style={{color: "#ca0e01ff", backgroundColor: "white"}}>Red</Button>
+                        })} style={{color: "#ca0e01ff", backgroundColor: "white"}}  id="red text">Red</Button>
                     </Col>
                     <Col>
                         <Button onClick={() => setPreferences((prev) => {
@@ -133,7 +134,7 @@ export default function Preferences(props) {
                             temp.hColor = "#091280ff"
                             sessionStorage.setItem("preferences", JSON.stringify(temp));
                             return temp;
-                        })} style={{color: "#3944BC", backgroundColor: "white"}}>Blue</Button>
+                        })} style={{color: "#3944BC", backgroundColor: "white"}} id="blue text">Blue</Button>
                     </Col>
                     <Col>
                         <Button onClick={() => setPreferences((prev) => {
@@ -145,7 +146,7 @@ export default function Preferences(props) {
                             temp.hColor = "#02583aff";
                             sessionStorage.setItem("preferences", JSON.stringify(temp));
                             return temp;
-                        })} style={{color: "#02794dff", backgroundColor: "white"}}>Green</Button>
+                        })} style={{color: "#02794dff", backgroundColor: "white"}} id="green text">Green</Button>
                     </Col>
                     <Col>
                         <Button onClick={() => setPreferences((prev) => {
@@ -157,14 +158,28 @@ export default function Preferences(props) {
                             temp.hColor = "#000000";
                             sessionStorage.setItem("preferences", JSON.stringify(temp));
                             return temp;
-                        })} style={{color: "#000000", backgroundColor: "white"}}>Black</Button>
+                        })} style={{color: "#000000", backgroundColor: "white"}} id="black text">Black</Button>
                     </Col>
                 </Row>
             </Container>
 
-            {/* <p>Paragraph text size</p>
-            <input></input>
-         */}
+
+
+            <p style={pStyle}> Labels </p>
+            <Button onClick={() => setPreferences((prev) => {
+                let temp = {};
+                for (let key in prev) {
+                    temp[key] = prev[key];
+                }
+                temp.useLabels = prev.useLabels === "true" ? "false" : "true";
+                sessionStorage.setItem("preferences", JSON.stringify(temp));
+                return temp;
+                })} id="change labels preferences">
+                    Turn {preferences.useLabels === "true" ? "OFF" : "ON"} Labels
+            </Button>
+                   
+
+            
         
         
     </>
