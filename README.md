@@ -13,12 +13,21 @@ If you are developing a production application, we recommend using TypeScript wi
 
 This site is a site about sudoku and has three pages. 
 
+# Landing screen
+The landing screen provides links to the different pages and explanations of the pages.
+
 # Page 1, play sudoku
-Play Sudoku allows the user to insert numbers into a sudoku board and save the numbers before playing the game. The user can delete the numbers by replacing the number with 0 and refreshing. To delete the game press the New Game button and re-load
+Play Sudoku allows the user to insert numbers into a sudoku board and save the numbers before playing the game. The user can only input numbers 1-9. To delete the game press the New Game button and re-load.
 
 # Page 2, how to play sudoku
-How to play sudoku describes the rules of sudoku
+How to play sudoku describes the rules of sudoku.
 
 # Page 3, Strategies
-Strategies is a work in progress that will contain information about common sudoku strategies
+Strategies is a work in progress that will contain information about common sudoku strategies.
+
+# Page 4, Other Games
+Other Games reccomends other logic puzzles.
+
+# Page 5, Preferences
+The Preferences page allows the user to choose how they want the site to be formatted.
 
